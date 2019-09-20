@@ -1,0 +1,169 @@
+.login{
+	    position: fixed;
+	    left: 50%;
+	    top: 50%;
+	    transform : translate(-50%,-50%);
+	    background: rgba(41,87,224,0.8);
+	    text-align: center;
+	    color: #fff;
+	    font-family:"微軟正黑體",sans-serif;
+	    border-radius: 10px;
+	    padding: 30px;
+	
+    }
+        
+    .login i{
+	font-size: 100px;
+	margin: 20px auto;
+    }
+    
+    .st1 {
+        width: 300px;
+        border-bottom: 1px groove rgba(255, 255, 255, 0.356);
+        margin: 10px;
+        padding-bottom: 10px;
+        padding-left:10px;
+		text-align: center;
+		
+
+    }
+
+     .st2 {
+       width: 300px;
+        border-bottom: 1px groove rgba(255, 255, 255, 0.356);
+        margin: 10px;
+        padding-bottom: 10px;
+        padding-left:35px;
+		text-align: center;
+        
+    }
+
+.title{
+     font-family:verdana;
+     text-transform: uppe;
+     font-weight: 900;
+     font-size:1.5cm;
+     color:gray;
+}
+.page{
+	text-transform: uppercase;
+	color:#206CEB;
+}
+
+.page:hover{
+	color:#D04ED6;
+}
+
+.ttd{
+	font-family:verdana;
+    text-transform: uppercase;
+    font-size:0.7cm;
+    color:gray;
+}
+
+.box{
+    width: 350px;
+    padding :10px;
+    position: absolute;
+    top: 40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background : #F1F2F2;
+    text-align : center;
+    border: 1px solid white;
+    border-radius:25px;
+}
+.box h1{
+    color:black;
+    padding:20px;
+    text-transform: uppercase;
+    font-weight:500;
+    cursor:pointer;
+   	
+}
+
+
+.box input[type = "text"],.box input[type = "password"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border-bottom: 2px solid #3498db;
+    padding : 14px 10px;
+    width: 200px;
+    outline: none;
+    color: black;
+   
+    transition: 0.25s; 
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+    width : 280px;
+    border-color:#2ecc71;
+}
+.box input[type = "submit"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding :14px 40px;
+    outline: none;
+    color: gray;
+    border-radius: 24px;
+    transtion: 0.25s; 
+    cursor:pointer;
+}
+.box input[type = "submit"]:hover{
+    background:#2ecc71;
+}
+
+.login{
+	    position: fixed;
+	    left: 50%;
+	    top: 50%;
+	    transform : translate(-50%,-50%);
+	    background: rgba(41,87,224,0.8);
+	    text-align: center;
+	    color: #fff;
+	    font-family:"微軟正黑體",sans-serif;
+	    border-radius: 10px;
+	    padding: 30px;
+	
+}
+        
+.login i{
+	font-size: 100px;
+	margin: 20px auto;
+}
+    
+.st1 {
+	width: 300px;
+    border-bottom: 1px groove rgba(255, 255, 255, 0.356);
+    margin: 10px;
+    padding-bottom: 10px;
+    padding-left:10px;
+	text-align: center;
+}
+
+.st2 {
+     width: 300px;
+     border-bottom: 1px groove rgba(255, 255, 255, 0.356);
+     margin: 10px;
+     padding-bottom: 10px;
+     padding-left:35px;
+   	 text-align: center;
+}
+    
+.showimage{
+	font-size:0.5cm;
+	border-bottom:1px solid gray;
+}
+
+.showimage:hover{
+	color:#206CEB;
+}
+
+
+<!-- test -->
