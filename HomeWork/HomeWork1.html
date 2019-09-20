@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>9*9</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px ridge gray;
+        }
+        hr {
+            border: 3px solid goldenrod;
+            margin: 25px;
+        }
+    </style>
+</head>
+
+<body style="background-color:lightblue">
+        <div align='center'>
+                <h1 style="color: red">HomeWork 1</h1>
+            </div>
+    <hr>
+    <div>
+        <table align= 'center' style="text-align:left">
+            <tbody>
+                <script>
+                    for (let i = 1; i < 10; i++) {
+                        document.write(`<tr>`)
+                        for (let j = 2; j < 10; j++) {
+                            document.write(`<td>${j}* ${i}= ${i*j}</td>`)
+                        }
+                        document.write(`</tr>`)
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

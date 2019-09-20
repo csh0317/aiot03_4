@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework3</title>
+    <style>
+        hr {
+            border: 3px solid goldenrod;
+            margin: 25px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .g {
+            -webkit-filter: grayscale(1);
+        }
+
+        .n {
+            -webkit-filter: grayscale(0);
+        }
+    </style>
+</head>
+
+<body style="background-color:lightblue">
+        <div align='center'>
+                <h1 style="color: red">HomeWork 3</h1>
+            </div>
+    <hr>
+    <div align="center" >
+        <img src="Images/chngstar.gif" id="star1" alt="" class="g">
+        <img src="Images/chngstar.gif" id="star2" alt="" class="g">
+        <img src="Images/chngstar.gif" id="star3" alt="" class="g">
+        <img src="Images/chngstar.gif" id="star4" alt="" class="g">
+        <img src="Images/chngstar.gif" id="star5" alt="" class="g">
+        <p id="rank"></p>
+        <input type="button" value="清除" id="clear">
+    </div>
+
+    <script>
+        light = true;
+        document.getElementById("clear").onclick = clearf;
+        let star = document.querySelectorAll("img");
+        // alert(star)
+        for (let i = 0; i < star.length; i++) {
+            star[i].onclick = clickf;
+        }
+        document.getElementById("star1").onmouseover = mouseOver;
+        document.getElementById("star2").onmouseover = mouseOver;
+        document.getElementById("star3").onmouseover = mouseOver;
+        document.getElementById("star4").onmouseover = mouseOver;
+        document.getElementById("star5").onmouseover = mouseOver;
+
+        document.getElementById("star1").onmouseout = mouseOut;
+        document.getElementById("star2").onmouseout = mouseOut;
+        document.getElementById("star3").onmouseout = mouseOut;
+        document.getElementById("star4").onmouseout = mouseOut;
+        document.getElementById("star5").onmouseout = mouseOut;
+
+        function mouseOver() {
+            let starNo = this.id.charAt(4);
+            // alert(starNo)
+            if (starNo == 1 && light) {
+                for (let i = 0; i < starNo; i++) {
+                    star[i].className = "n";
+                }
+            }
+            // document.getElementById("star1").className = "n";
+            // console.log("1")
+            else if (starNo == 2 && light) {
+                for (let i = 0; i < starNo; i++) {
+                    star[i].className = "n";
+                }
+                // document.getElementById("star1").className = "n";
+                // document.getElementById("star2").className = "n";
+            }
+            // console.log("22")
+            else if (starNo == 3 && light) {
+                for (let i = 0; i < starNo; i++) {
+                    star[i].className = "n";
+                }
+                // document.getElementById("star1").className = "n";
+                // document.getElementById("star2").className = "n";
+                // document.getElementById("star3").className = "n";
+            }
+            // console.log("333")
+            else if (starNo == 4 && light) {
+                for (let i = 0; i < starNo; i++) {
+                    star[i].className = "n";
+                }
+                // document.getElementById("star1").className = "n";
+                // document.getElementById("star2").className = "n";
+                // document.getElementById("star3").className = "n";
+                // document.getElementById("star4").className = "n";
+            }
+            // console.log("4444")
+            else if (starNo == 5 && light) {
+                for (let i = 0; i < starNo; i++) {
+                    star[i].className = "n";
+                }
+                // document.getElementById("star1").className = "n";
+                // document.getElementById("star2").className = "n";
+                // document.getElementById("star3").className = "n";
+                // document.getElementById("star4").className = "n";
+                // document.getElementById("star5").className = "n";
+            }
+            // console.log("55555")
+            else
+                console.log("Nothing")
+        }
+        function mouseOut() {
+            let starNo = this.id.charAt(4);
+            // alert(starNo)
+            if (starNo == 5 && light) {
+                for (let i = 0; i < starNo; i++) {
+                    star[i].className = "g";
+                }
+                // document.getElementById("star5").className = "g";
+                // document.getElementById("star4").className = "g";
+                // document.getElementById("star3").className = "g";
+                // document.getElementById("star2").className = "g";
+                // document.getElementById("star1").className = "g";
+            }
+            // console.log("1")
+            else if (starNo == 4 && light) {
+                for (let i = 0; i < starNo; i++) {
+                    star[i].className = "g";
+                }
+                // document.getElementById("star4").className = "g";
+                // document.getElementById("star3").className = "g";
+                // document.getElementById("star2").className = "g";
+                // document.getElementById("star1").className = "g";
+            }
+            // console.log("22")
+            else if (starNo == 3 && light) {
+                for (let i = 0; i < starNo; i++) {
+                    star[i].className = "g";
+                }
+                // document.getElementById("star3").className = "g";
+                // document.getElementById("star2").className = "g";
+                // document.getElementById("star1").className = "g";
+            }
+            // console.log("333")
+            else if (starNo == 2 && light) {
+                for (let i = 0; i < starNo; i++) {
+                    star[i].className = "g";
+                }
+                // document.getElementById("star2").className = "g";
+                // document.getElementById("star1").className = "g";
+            }
+            // console.log("4444")
+            else if (starNo == 1 && light) {
+                for (let i = 0; i < starNo; i++) {
+                    star[i].className = "g";
+                }
+            }
+            // document.getElementById("star1").className = "g";
+            // console.log("55555")
+            else
+                console.log("Nothing")
+        }
+
+        function clickf() {
+            let starNo = this.id.charAt(4);
+            // alert("click")
+            // alert(starNo)
+            if (starNo == 5) {
+                document.getElementById("rank").innerHTML = "五顆星"
+                light = false;
+            }
+            // console.log("1")
+            else if (starNo == 4) {
+                document.getElementById("rank").innerHTML = "四顆星"
+                light = false;
+            }
+            // console.log("22")
+            else if (starNo == 3) {
+                document.getElementById("rank").innerHTML = "三顆星"
+                light = false;
+            }
+            // console.log("333")
+            else if (starNo == 2) {
+                document.getElementById("rank").innerHTML = "二顆星"
+                light = false;
+            }
+            // console.log("4444")
+            else if (starNo == 1) {
+                document.getElementById("rank").innerHTML = "一顆星"
+                light = false;
+            }
+            // console.log("55555")
+            else
+                document.getElementById("rank").innerHTML = "未評分"
+        }
+
+        function clearf() {
+            for (let i = 0; i < 5; i++) {
+                star[i].className = "g";
+            }
+            document.getElementById("rank").innerHTML = " ";
+            light = true;
+        }
+    </script>
+</body>
+
+</html>

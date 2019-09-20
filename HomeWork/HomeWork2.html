@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <style>
+        .sp1 {
+            color: slategray;
+            font-size: 90%;
+        }
+
+        fieldset {
+            border: 2px lightgreen groove;
+            margin: 0px auto;
+        }
+
+        div {
+            text-align: center
+        }
+
+        .wrong {
+            color: red;
+        }
+
+        .right {
+            color: lightslategray;
+        }
+        #title {
+            border: 3px solid goldenrod;
+            margin: 25px;
+        }
+    </style>
+</head>
+
+<body style="background-color:lightblue">
+    <div align='center'>
+        <h1 style="color: red">HomeWork 2</h1>
+    </div>
+    <hr id="title">
+    <form action="#" method="GET" >
+        <fieldset style="width:600px">
+            <legend>
+                From Check
+            </legend>
+            <div class="form">
+                <label for="">
+                    姓名：
+                </label>
+                <input type="text" id="username" value="" minlength="2">
+                <span id="namesp"></span>
+            </div>
+            <div>
+                <span class="sp1">(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</span>
+            </div>
+            <hr>
+            <div>
+                <label for="">
+                    密碼：
+                </label>
+                <input type="password" id="pwd" value="" minlength="6">
+                <span id="pwdsp"></span>
+            </div>
+            <div>
+                <span class="sp1">(1.不可空白，2.至少六個字以上，且必須包含英文字母、數字、特殊字元[!@#$%^&*])</span>
+            </div>
+            <hr>
+            <div>
+                <label for="">
+                    日期：
+                </label>
+                <input type="date" id="date" value="loacl">
+            </div>
+            <div>
+                <span class="sp1">格式： 西元 年/月/日 yyyy/mm/dd</span>
+            </div>
+            <hr>
+            <div style="text-align: center ">
+                <input type="submit" value="送出">
+                <input type="reset" value="清除" id="clear">
+            </div>
+            <script>
+                document.getElementById("clear").onclick = clearf;
+                document.getElementById("username").onblur = checkName;
+                document.getElementById("pwd").onblur = checkPwd;
+                document.getElementById("date").onblur = checkDate;
+                //姓名
+                // function checkName() {
+                //     let theNameObj = document.getElementById("username");
+                //     let theNameVal = theNameObj.value;
+                //     if (theNameVal == "") {
+                //         document.getElementById("namesp").innerHTML = ' <img src="Images/wrong.png" alt="" height="20px"> 不得空白。';
+                //         document.getElementById("namesp").className = "wrong";
+                //         // alert("必須輸入。")
+                //     }
+                //     else if (theNameVal.length >= 2) {
+
+                //         // alert("至少輸入兩個字。")
+                //         for (let i = 0; i < theNameVal.length; i++) {
+                //             let theNameChr = theNameVal.charAt(i);
+                //             if (theNameChr.charCodeAt(i) >= 0x4e00 && theNameChr.charCodeAt(i) <= 0x9fff) {
+                //                 console.log(theNameChr)
+                //                 typeRight = true;
+                //                 break;
+                //             }
+                //             // else if (theNameChr.charCodeAt(i) <= 0x4e00 || theNameChr.charCodeAt(i) >= 0x9fff) {
+                //             else{
+                //                 document.getElementById("namesp").innerHTML = ' <img src="Images/wrong.png" alt="" height="20px"> 請輸入中文。';
+                //                 document.getElementById("namesp").className = "wrong";
+                //                 typeRight = false;
+                //             }
+                //         }
+                //         if (typeRight) {
+                //         document.getElementById("namesp").innerHTML = ' <img src="Images/right.png" alt="" height="20px"> 輸入正確。';
+                //         document.getElementById("namesp").className = "right";
+                //     }
+                //     } else {
+                //         document.getElementById("namesp").innerHTML = ' <img src="Images/wrong.png" alt="" height="20px"> 至少輸入兩個字以上。';
+                //         document.getElementById("namesp").className = "wrong";
+                //     }
+                // }
+
+                function checkName() {
+                    let theNameObj = document.getElementById("username");
+                    let theNameVal = theNameObj.value;
+                    // alert(theNameVal);
+                    let correct = false;
+
+                    if (theNameVal != 0) {
+                        // alert(theNameVal);
+                        if (theNameVal.length < 2) {
+                            document.getElementById("namesp").innerHTML = `<img src="Images/wrong.png" alt="" height="20px">必須輸入兩個字以上`;
+                            document.getElementById("namesp").className = "wrong";
+                            // alert("必須輸入兩個字以上");
+                        } else {
+                            for (let i = 0; i < theNameVal.length; i++) {
+                                if (theNameVal.charCodeAt(i) >= 0x4e00 && theNameVal.charCodeAt(i) <= 0x9fff) {
+                                    // alert(`第${i}個是中文字 ${theNameVal.charAt(i)}`)
+                                    correct = true;
+                                }
+                                else {
+                                    // alert(`第${i}個不是中文字 ${theNameVal.charAt(i)}`)
+                                    correct = false;
+                                }
+                            }
+                            if (correct == true) {
+                                document.getElementById("namesp").innerHTML = `<img src="Images/right.png" alt="" height="20px">輸入正確。`;
+                                document.getElementById("namesp").className = "right";
+                                // alert("輸入正確。")
+                            } else {
+                                document.getElementById("namesp").innerHTML = `<img src="Images/wrong.png" alt="" height="20px">格式錯誤。`;
+                                document.getElementById("namesp").className = "wrong";
+                                // alert("格式錯誤。")
+                            }
+                        }
+                    } else{
+                        document.getElementById("namesp").innerHTML = `<img src="Images/wrong.png" alt="" height="20px">必須輸入。`;
+                        document.getElementById("namesp").className = "wrong";
+                    }
+                    // alert("必須輸入");
+                }
+
+                //密碼
+                function checkPwd() {
+                    //取得元素值
+                    let thePwd = document.getElementById("pwd").value;
+                    let thePwdLen = thePwd.length;
+                    let flag1 = false, flag2 = false;
+
+                    if (thePwd == "") {
+                        // alert("you must enter");
+                        document.getElementById("pwdsp").innerHTML = ' <img src="Images/wrong.png" alt="" height="20px"> 不得空白。';
+                        document.getElementById("pwdsp").className = "wrong";
+                    }
+                    //如果長度是否大於6，判斷是否包含字母、數字、特殊符號a1@
+                    else if (thePwdLen >= 6) {
+                        for (let i = 0; i < thePwdLen; i++) {
+                            let PwdChr = thePwd.charAt(i).toUpperCase();//轉換為大寫
+                            if (PwdChr >= "A" && PwdChr <= "Z") {
+                                flag1 = true;
+                            }
+                            else if (PwdChr >= "0" && PwdChr <= "9")
+                                flag2 = true;
+                            if (flag1 && flag2) break;
+                        }
+                        if (flag1 && flag2) {
+                            document.getElementById("pwdsp").innerHTML = ' <img src="Images/right.png" alt="" height="20px"> 輸入正確。';
+                            document.getElementById("pwdsp").className = "right";
+                        }
+                        else {
+                            document.getElementById("pwdsp").innerHTML = ' <img src="Images/wrong.png" alt="" height="20px"> 格式錯誤。';
+                            document.getElementById("pwdsp").className = "wrong";
+                        }
+                    }
+                    else {
+                        document.getElementById("pwdsp").innerHTML = ' <img src="Images/wrong.png" alt="" height="20px"> 必須輸入六碼。';
+                        document.getElementById("pwdsp").className = "wrong";
+                    }
+                }
+                //日期
+                function checkDate() {
+                    let D = new Date();
+                    let theYear = D.getFullYear() - 1911;
+                    let theMonth = D.getMonth() + 1;
+                    let theDate = D.getDate();
+                    alert("民國" + theYear + "年" + theMonth + "月" + theDate + "日");
+                }
+                //清除
+                function clearf(){
+                    document.getElementById("pwdsp").innerHTML = "";
+                    document.getElementById("namesp").innerHTML = "";
+                }
+            
+            </script>
+        </fieldset>
+    </form>
+</body>
+
+</html>
